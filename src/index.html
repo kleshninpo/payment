@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+  <link rel="stylesheet" href="../dist/style.css">
+</head>
+<body>
+<div class="page-wrapper">
+  <!--Aside start-->
+  <aside class="menu">
+    <ul class="menu__menu-list">
+      <li class="menu__list-item"><a href="#">Личный кабинет</a></li>
+      <li class="menu__list-item menu__list-item_active"><a href="#">Платежи</a></li>
+      <li class="menu__list-item"><a href="#">История платежей</a></li>
+      <li class="menu__list-item"><a href="#">Настройки</a></li>
+      <li class="menu__list-item"><a href="#">Выход</a></li>
+    </ul>
+  </aside>
+  <!--Aside end-->
+
+  <!--Main start-->
+  <main class="content">
+    <div class="menu-button">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <!--Header start-->
+    <header class="content__header">
+      <p>Информация по оплате:</p>
+      <div class="content__payment-info">
+        <p>Номер счёта:</p>
+        <p>Сумма платежа:</p>
+      </div>
+      <div class="content__payment-info">
+        <p class="content__p_info">123456789</p>
+        <p class="content__p_info">100 руб.</p>
+      </div>
+    </header>
+    <!--Header end-->
+
+    <!--form start-->
+    <form class="content__card-data">
+      <h2>Данные банковской карты</h2>
+      <!--Card front side start-->
+      <section class="content__front">
+        <div class="content__card-number">
+          <p>Номер карты:</p>
+
+          <input id="card-number1" type="text" maxlength=4>
+          <label for="card-number1"></label>
+          <input id="card-number2" type="text" maxlength=4>
+          <label for="card-number2"></label>
+          <input id="card-number3" type="text" maxlength=4>
+          <label for="card-number3"></label>
+          <input id="card-number4" type="text" maxlength=4>
+          <label for="card-number4"></label>
+
+        </div>
+        <div class="content__card-date">
+          <p>Срок действия:</p>
+          <div class="content__select-wrapper">
+            <div class="selectBox">
+              <p class=valueTag name=select>Месяц</p>
+              <ul class='selectMenuBox month'></ul>
+            </div>
+          </div>
+
+          <div class="content__select-wrapper">
+            <div class="selectBox">
+              <p class=valueTag name=select>Год</p>
+              <ul class='selectMenuBox year'></ul>
+            </div>
+          </div>
+        </div>
+        <div class="content__card-holder-wrapper">
+          <input type="text" class="content__card-holder" placeholder="Держатель карты">
+        </div>
+      </section>
+      <!--Card front side end-->
+
+      <!--Card back side start-->
+      <section class="content__back">
+        <div class="content__payline"></div>
+        <div class="content__cvc-container">
+          <p>Код CVV2 / CVC2:</p>
+          <input type="text" placeholder="000" class="content__cvc"
+          maxlength=3>
+        </div>
+      </section>
+      <!--Card back side end-->
+
+      <button type="submit">Оплатить</button>
+    </form>
+    <!--form end-->
+
+    <!--footer start-->
+    <footer class="content__footer">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum incidunt itaque magnam optio sequi soluta? Excepturi modi numquam pariatur perspiciatis sunt velit veniam veritatis? Aperiam eaque exercitationem labore nobis!
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus eos in ipsam maiores molestias nobis porro repellat? Corporis debitis deleniti neque optio veritatis. At illum labore necessitatibus unde voluptatibus!
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur atque, consequuntur dolor nesciunt quos saepe sapiente velit? A cum dolor excepturi maiores nam neque nobis non omnis, perferendis qui.
+      </p>
+    </footer>
+    <!--footer end-->
+
+  </main>
+  <!--Main end-->
+</div>
+<script type="text/javascript" src="../dist/bundle.js"></script>
+</body>
+</html>

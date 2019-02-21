@@ -1,0 +1,246 @@
+@import 'vars';
+.content {
+  position: relative;
+  max-width: 38rem;
+  background-color: $bgLigthColor;
+  & > * {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  p {
+    margin: .4rem 0;
+    color: $pColor;
+  }
+  input, select {
+    border: 1px solid lighten($pColor, 10%);
+  }
+  button {
+    margin: 2rem 0;
+    padding: .7rem 2rem;
+    border: none;
+    border-radius: 15% / 50%;
+    background: linear-gradient(to bottom, #004CA2, #005ABE);
+    color: #fff;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      background: linear-gradient(to bottom, #005ABE, #004CA2);
+      color: #cacaca;
+    }
+  }
+  .error {
+    box-shadow: 0 0 2px 0 red;
+  }
+  .success {
+    box-shadow: 0 0 2px 0 green;
+  }
+  .alert {
+    position: absolute;
+    z-index: 10;
+    max-width: 9rem;
+    bottom: -3rem;
+    right: 0;
+    padding: .4rem .6rem;
+    font-size: 70%;
+    background-color: #fff;
+    border: 1px solid $pColor;
+    border-radius: .5rem;
+  }
+}
+
+/*Хедер с данными о платеже*/
+.content__header {
+  padding: 3rem 2rem 0 2rem;
+  .content__payment-info {
+    display: inline-block;
+    p:not(.content__p_info) {
+      min-width: 10rem;
+    }
+  }
+  .content__p_info {
+    color: #000;
+  }
+}
+
+/*Данные карты*/
+.content__card-data {
+  padding: 0 2rem;
+  position: relative;
+}
+
+/*Лицевая/Обратная стороны карты*/
+.content__front, .content__back {
+  width: 20rem;
+  height: 12rem;
+  padding: 1.5rem 1rem;
+  border: 1px solid lighten($pColor, 10%);
+  border-radius: .7rem;
+  background-color: $bgLigthColor;
+}
+.content__front {
+  position: relative;
+  z-index: 1;
+  input {
+    padding: .4rem .6rem;
+  }
+  .content__card-number {
+    position: relative;
+    input {
+      max-width: 2.6rem;
+      margin: 0 .25rem;
+      &:first-of-type {
+        margin: 0 .25rem 0 0;
+      }
+      &:last-of-type {
+        margin: 0 0 0 .25rem;
+      }
+    }
+    .alert {
+      bottom: unset;
+      top: -1.5rem;
+    }
+  }
+  .content__card-date {
+    margin-bottom: 1.5rem;
+    position: relative;
+    span.alert {
+      bottom: unset;
+      top: 1.25rem;
+      width: 6rem;
+      right: -.3rem;
+    }
+  }
+  .content__select-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 3rem;
+    margin: -.5rem 4rem 1rem 0;
+    &:last-of-type {
+      margin-right: 7rem;
+      width: 5.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      &:hover {
+        background-color: #A7B2C1;
+      }
+    }
+    .selectBox {
+      position: absolute;
+      left: 0;
+      z-index: 11;
+      p.valueTag {
+        position: relative;
+        background-color: #fff;
+        border: 1px solid lightgray;
+        padding: .5rem 3rem .5rem .5rem;
+        margin: 0;
+        &::after {
+          content: '';
+          display: block;
+          position:  absolute;
+          width: 7px;
+          height: 7px;
+          right: .7rem;
+          top: .7rem;
+          z-index: 1;
+          border: 1px solid $pColor;
+          border-top: none;
+          border-right: none;
+          transition: all .2s;
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+      }
+      .selectMenuBox {
+        background-color: lightgray;
+        z-index: 11;
+        max-height: 10rem;
+        overflow: auto;
+      }
+    }
+    .selectBox.active {
+      p.valueTag::after {
+        top: 1rem;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+    }
+    .option {
+      padding: .5rem 1rem .5rem .5rem;
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        background-color: #A7B2C1;
+        color: #fff;
+      }
+    }
+  }
+  .content__card-holder-wrapper {
+    position: relative;
+  }
+  .content__card-holder {
+    position: relative;
+    width: calc(100% - 1.8rem);
+  }
+}
+.content__back {
+  position: absolute;
+  right: 2rem;
+  top: 4rem;
+  z-index: 0;
+  .content__payline {
+    width: calc(100% + 2rem);
+    height: 3rem;
+    margin: 0 0 2rem -1rem;
+    background-color: darken($bgLigthColor, 25%);
+    &::after {
+
+    }
+  }
+  .content__cvc-container {
+    margin-left: 11rem;
+    position: relative;
+    & > p {
+      position: relative;
+      &::after {
+        display: block;
+        content: '?';
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        right: .5rem;
+        top: 1.9rem;
+        border: 1px solid lighten($pColor, 10%);
+        border-radius: 50%;
+        color: $pColor;
+        text-align: center;
+        line-height: 1.5rem;
+        cursor: pointer;
+      }
+    }
+    .content__cvc {
+      width: 8rem;
+      height: 2rem;
+      padding-left: 1rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+/*Футер*/
+.content__footer {
+  padding: 1rem 2rem;
+  font-size: .6rem;
+  background-color: lighten($bgDarkColor, 17%);
+  color: darken($linkColor, 35%);
+}

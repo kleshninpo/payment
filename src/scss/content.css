@@ -1,0 +1,200 @@
+@charset "UTF-8";
+.content {
+  position: relative;
+  max-width: 38rem;
+  background-color: #F7F8F8; }
+  .content > * {
+    padding-left: 2rem;
+    padding-right: 2rem; }
+  .content p {
+    margin: .4rem 0;
+    color: #A7B2C1; }
+  .content input, .content select {
+    border: 1px solid #c5ccd6; }
+  .content button {
+    margin: 2rem 0;
+    padding: .7rem 2rem;
+    border: none;
+    border-radius: 15% / 50%;
+    background: linear-gradient(to bottom, #004CA2, #005ABE);
+    color: #fff; }
+    .content button:hover {
+      cursor: pointer; }
+    .content button:active {
+      background: linear-gradient(to bottom, #005ABE, #004CA2);
+      color: #cacaca; }
+  .content .error {
+    box-shadow: 0 0 2px 0 red; }
+  .content .success {
+    box-shadow: 0 0 2px 0 green; }
+  .content .alert {
+    position: absolute;
+    z-index: 10;
+    max-width: 9rem;
+    bottom: -3rem;
+    right: 0;
+    padding: .4rem .6rem;
+    font-size: 70%;
+    background-color: #fff;
+    border: 1px solid #A7B2C1;
+    border-radius: .5rem; }
+
+/*╨е╨╡╨┤╨╡╤А ╤Б ╨┤╨░╨╜╨╜╤Л╨╝╨╕ ╨╛ ╨┐╨╗╨░╤В╨╡╨╢╨╡*/
+.content__header {
+  padding: 3rem 2rem 0 2rem; }
+  .content__header .content__payment-info {
+    display: inline-block; }
+    .content__header .content__payment-info p:not(.content__p_info) {
+      min-width: 10rem; }
+  .content__header .content__p_info {
+    color: #000; }
+
+/*╨Ф╨░╨╜╨╜╤Л╨╡ ╨║╨░╤А╤В╤Л*/
+.content__card-data {
+  padding: 0 2rem;
+  position: relative; }
+
+/*╨Ы╨╕╤Ж╨╡╨▓╨░╤П/╨Ю╨▒╤А╨░╤В╨╜╨░╤П ╤Б╤В╨╛╤А╨╛╨╜╤Л ╨║╨░╤А╤В╤Л*/
+.content__front, .content__back {
+  width: 20rem;
+  height: 12rem;
+  padding: 1.5rem 1rem;
+  border: 1px solid #c5ccd6;
+  border-radius: .7rem;
+  background-color: #F7F8F8; }
+
+.content__front {
+  position: relative;
+  z-index: 1; }
+  .content__front input {
+    padding: .4rem .6rem; }
+  .content__front .content__card-number {
+    position: relative; }
+    .content__front .content__card-number input {
+      max-width: 2.6rem;
+      margin: 0 .25rem; }
+      .content__front .content__card-number input:first-of-type {
+        margin: 0 .25rem 0 0; }
+      .content__front .content__card-number input:last-of-type {
+        margin: 0 0 0 .25rem; }
+    .content__front .content__card-number .alert {
+      bottom: unset;
+      top: -1.5rem; }
+  .content__front .content__card-date {
+    margin-bottom: 1.5rem;
+    position: relative; }
+    .content__front .content__card-date span.alert {
+      bottom: unset;
+      top: 1.25rem;
+      width: 6rem;
+      right: -.3rem; }
+  .content__front .content__select-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 3rem;
+    margin: -.5rem 4rem 1rem 0; }
+    .content__front .content__select-wrapper:last-of-type {
+      margin-right: 7rem;
+      width: 5.5rem; }
+    .content__front .content__select-wrapper ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      .content__front .content__select-wrapper ul:hover {
+        background-color: #A7B2C1; }
+    .content__front .content__select-wrapper .selectBox {
+      position: absolute;
+      left: 0;
+      z-index: 11; }
+      .content__front .content__select-wrapper .selectBox p.valueTag {
+        position: relative;
+        background-color: #fff;
+        border: 1px solid lightgray;
+        padding: .5rem 3rem .5rem .5rem;
+        margin: 0; }
+        .content__front .content__select-wrapper .selectBox p.valueTag::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          right: .7rem;
+          top: .7rem;
+          z-index: 1;
+          border: 1px solid #A7B2C1;
+          border-top: none;
+          border-right: none;
+          transition: all .2s;
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+      .content__front .content__select-wrapper .selectBox .selectMenuBox {
+        background-color: lightgray;
+        z-index: 11;
+        max-height: 10rem;
+        overflow: auto; }
+    .content__front .content__select-wrapper .selectBox.active p.valueTag::after {
+      top: 1rem;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg); }
+    .content__front .content__select-wrapper .option {
+      padding: .5rem 1rem .5rem .5rem;
+      position: relative;
+      cursor: pointer; }
+      .content__front .content__select-wrapper .option:hover {
+        background-color: #A7B2C1;
+        color: #fff; }
+  .content__front .content__card-holder-wrapper {
+    position: relative; }
+  .content__front .content__card-holder {
+    position: relative;
+    width: calc(100% - 1.8rem); }
+
+.content__back {
+  position: absolute;
+  right: 2rem;
+  top: 4rem;
+  z-index: 0; }
+  .content__back .content__payline {
+    width: calc(100% + 2rem);
+    height: 3rem;
+    margin: 0 0 2rem -1rem;
+    background-color: #b3bdbd; }
+  .content__back .content__cvc-container {
+    margin-left: 11rem;
+    position: relative; }
+    .content__back .content__cvc-container > p {
+      position: relative; }
+      .content__back .content__cvc-container > p::after {
+        display: block;
+        content: '?';
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        right: .5rem;
+        top: 1.9rem;
+        border: 1px solid #c5ccd6;
+        border-radius: 50%;
+        color: #A7B2C1;
+        text-align: center;
+        line-height: 1.5rem;
+        cursor: pointer; }
+    .content__back .content__cvc-container .content__cvc {
+      width: 8rem;
+      height: 2rem;
+      padding-left: 1rem;
+      font-size: 1rem; }
+
+/*╨д╤Г╤В╨╡╤А*/
+.content__footer {
+  padding: 1rem 2rem;
+  font-size: .6rem;
+  background-color: #373a44;
+  color: #a6a6a6; }
+
+/*# sourceMappingURL=content.css.map */

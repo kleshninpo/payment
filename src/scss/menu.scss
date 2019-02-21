@@ -1,0 +1,79 @@
+@import 'vars';
+.menu {
+  margin-right: -5px;
+  transition: all .2s;
+  z-index: 10;
+  &.active {
+    height: calc(100% - 3rem);
+    opacity: .99;
+    left: 0;
+    right: 0;
+    margin: 0;
+    text-align: center;
+    background-color: lighten($bgDarkColor, 7%);
+    .menu__menu-list {
+      max-width: 100%;
+    }
+  }
+  .menu__menu-list {
+    margin: 0;
+    padding: 0;
+    max-width: 320px;
+    list-style: none;
+    a {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 1.5rem 5rem 1.5rem 1.5rem;
+      text-decoration: none;
+      background-color: lighten($bgDarkColor, 7%);
+      color: $linkColor;
+      &:hover {
+        background-color: lighten($bgDarkColor, 11%);
+        color: darken($linkColor, 35%);
+      }
+      &:active {
+        color: darken($linkColor, 50%);
+      }
+    }
+    .menu__list-item_active {
+      a {
+        background-color: lighten($bgDarkColor, 15%);
+      }
+    }
+  }
+}
+
+/*Кнопка меню*/
+.menu-button {
+  position: absolute;
+  top: -2.7rem;
+  z-index: 11;
+  cursor: pointer;
+  display: none;
+  & > div {
+    width: 26px;
+    height: 2px;
+    margin: 6px 0;
+    background-color: tomato;
+    transition: .2s;
+  }
+  &:hover {
+    & > div {
+      background-color: darken(tomato, 20%);
+    }
+  }
+}
+.menu-button.active {
+  .bar1 {
+    transform:translate(6px, 9px)
+    rotate(45deg);
+  }
+  .bar2 {
+    opacity: 0;
+  }
+  .bar3 {
+    transform:translate(6px, -7px)
+    rotate(-45deg);
+  }
+}

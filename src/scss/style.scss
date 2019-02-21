@@ -1,0 +1,21 @@
+@import 'vars';
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+/*Общие стили для больших блоков*/
+body {
+  margin: 0;
+  padding: 3rem 0 0 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: $bgDarkColor;
+}
+.page-wrapper {
+  text-align: center;
+  & > * {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+  }
+}

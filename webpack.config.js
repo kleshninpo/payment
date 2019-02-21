@@ -12,6 +12,11 @@ let conf = {
   },
   devServer: {
     overlay: true,
+    contentBase: [path.resolve(__dirname, "dist")],
+    compress: true,
+    port: 4200,
+    historyApiFallback: true,
+    noInfo: true
   },
   module: {
     rules: [
